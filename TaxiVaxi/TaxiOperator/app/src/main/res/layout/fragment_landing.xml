@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="600sp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            android:layout_weight=".40"
+            android:background="@drawable/puplr_gradient_color" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0sp"
+            android:layout_weight=".60"
+            android:background="@color/backgroundGrey" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="2sp"
+            android:layout_marginTop="30sp"
+            android:layout_marginRight="2sp"
+            android:layout_marginBottom="2sp"
+            android:elevation="4sp"
+            app:cardCornerRadius="55sp">
+
+            <ImageView
+                android:layout_width="110sp"
+                android:layout_height="110sp"
+                app:srcCompat="@drawable/ic_user" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/driver_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="25sp"
+            android:fontFamily="@font/sintonyfamily"
+            android:gravity="center"
+            android:text=" "
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_marginTop="25sp"
+            android:layout_marginRight="20sp"
+            android:background="@color/backgroundGrey"
+            android:elevation="5sp"
+            app:cardCornerRadius="5sp">
+
+            <LinearLayout
+                android:id="@+id/pending_booking_lay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".75"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0sp"
+                        android:layout_weight=".6"
+                        android:fontFamily="@font/sintonyfamily"
+                        android:paddingLeft="10sp"
+                        android:paddingTop="15sp"
+                        android:paddingBottom="4sp"
+                        android:text="PENDING DUTY SLIPS"
+                        android:textColor="@color/textBlack"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0sp"
+                        android:layout_weight=".4"
+                        android:fontFamily="@font/sintonyfamily"
+                        android:paddingLeft="15sp"
+                        android:paddingTop="4sp"
+                        android:paddingBottom="10sp"
+                        android:text="BOOKINGS"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".25"
+                    android:padding="20sp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:srcCompat="@drawable/ic_pending" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_marginTop="25sp"
+            android:layout_marginRight="20sp"
+            android:visibility="gone"
+            android:background="@color/backgroundGrey"
+            android:elevation="5sp"
+            app:cardCornerRadius="5sp">
+
+            <LinearLayout
+                android:id="@+id/search_booking_lay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".75"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="0sp"
+                        android:layout_weight=".6"
+                        android:fontFamily="@font/sintonyfamily"
+                        android:hint="SEARCH BY LOCATION"
+                        android:paddingLeft="10sp"
+                        android:paddingTop="15sp"
+                        android:textColor="@color/textBlack"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0sp"
+                        android:layout_weight=".4"
+                        android:fontFamily="@font/sintonyfamily"
+                        android:paddingLeft="15sp"
+                        android:paddingTop="4sp"
+                        android:paddingBottom="10sp"
+                        android:text="SEARCH BOOKINGS BY LOCATION"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".25"
+                    android:orientation="vertical"
+                    android:padding="20sp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:srcCompat="@drawable/ic_baseline_search_24"
+                        app:tint="#C33764" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/circular_background"
+        android:elevation="4dp" />
+
+</FrameLayout>

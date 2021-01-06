@@ -1,0 +1,39 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.TaxiOperator" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style> <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <!-- Customize your theme here. -->
+    <item name="colorPrimary">@color/colorPrimary</item>
+    <item name="colorPrimaryDark">@color/backgroungBlue</item>
+    <item name="colorAccent">@color/colorPrimary</item>
+</style>
+
+    <style name="ProfileTextViewTheme" parent="Theme.AppCompat.Light">
+        <item name="android:fontFamily">@font/sintonyfamily</item>
+        <item name="android:textColor">@color/taxivaxiColorMoreLightGray</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textIsSelectable">true</item>
+    </style>
+    <style name="AppTheme.RoundedCornerMaterialButton" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:background">@drawable/rounded_shape_button</item>
+    </style>
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat" />
+    <style name="TextViewValueTheme" parent="Theme.AppCompat.Light">
+        <item name="android:fontFamily">@font/sintonyfamily</item>
+        <item name="android:textColor">@color/taxivaxiColorMoreLightGray</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textIsSelectable">true</item>
+    </style>
+    <style name="TextViewKeyTheme" parent="Theme.AppCompat.Light">
+        <item name="android:fontFamily">@font/sintonyfamily</item>
+        <item name="android:textColor">@color/textBlack</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+
+</resources>

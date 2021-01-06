@@ -1,0 +1,623 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    tools:context="com.taxivaxi.operator.fragment.BookingDetailsFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp">
+                    <TextView
+                        android:id="@+id/travel_date"
+                        style="@style/TextViewValueTheme"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".4"
+                        android:text="12/11/2017"
+                        android:textStyle="bold" />
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="35dp"
+                    android:background="@android:color/black" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        style="@style/TextViewKeyTheme"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".45"
+                        android:text="Booking Id" />
+
+                    <TextView
+                        android:id="@+id/booking_id"
+                        style="@style/TextViewValueTheme"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".55"
+                        android:text="ctttndkkdkllsn" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp">
+
+                    <TextView
+                        style="@style/TextViewKeyTheme"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".45"
+                        android:text="Pickup Location" />
+
+                    <TextView
+                        android:id="@+id/pickup_location"
+                        style="@style/TextViewValueTheme"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".55"
+                        android:text="Delhi, India" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp">
+
+                    <TextView
+                        style="@style/TextViewKeyTheme"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".45"
+                        android:text="Drop Location" />
+
+                    <TextView
+                        android:id="@+id/drop_location"
+                        style="@style/TextViewValueTheme"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".55"
+                        android:text="Haldwani,Uttrakhand India" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <TextView
+                        style="@style/TextViewKeyTheme"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".45"
+                        android:text="No of Passenger" />
+
+                    <TextView
+                        android:id="@+id/no_of_passenger"
+                        style="@style/TextViewValueTheme"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".55"
+                        android:text="3" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <TextView
+                        style="@style/TextViewKeyTheme"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".45"
+                        android:text="Trip Type" />
+
+                    <TextView
+                        android:id="@+id/trip_type"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".55"
+                        android:fontFamily="@font/sintonyfamily"
+                        android:text="Local  8/80"
+                        android:textColor="@color/taxivaxiColorMoreLightGray"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/passenger_lay_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <TextView
+                        android:id="@+id/passenger_name_1"
+                        style="@style/TextViewValueTheme"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight=".45"
+                        android:text="Passenger Name 1" />
+
+                    <TextView
+                        android:id="@+id/passenger_contact_1"
+                        style="@style/TextViewValueTheme"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".55"
+                        android:text="Passenger Contact 1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/passenger_lay_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <TextView
+                        android:id="@+id/passenger_name_2"
+                        style="@style/TextViewValueTheme"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight=".45"
+                        android:text="Passenger Name 2" />
+
+                    <TextView
+                        android:id="@+id/passenger_contact_2"
+                        style="@style/TextViewValueTheme"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".55"
+                        android:text="Passenger Contact 2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/passenger_lay_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <TextView
+                        android:id="@+id/passenger_name_3"
+                        style="@style/TextViewValueTheme"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight=".45"
+                        android:text="Passenger Name 3" />
+
+                    <TextView
+                        android:id="@+id/passenger_contact_3"
+                        style="@style/TextViewValueTheme"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".55"
+                        android:text="Passenger Contact 3" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/passenger_lay_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <TextView
+                        android:id="@+id/passenger_name_4"
+                        style="@style/TextViewValueTheme"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight=".45"
+                        android:text="Passenger Name 4" />
+
+                    <TextView
+                        android:id="@+id/passenger_contact_4"
+                        style="@style/TextViewValueTheme"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".55"
+                        android:text="Passenger Contact 4" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/passenger_lay_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <TextView
+                        android:id="@+id/passenger_name_5"
+                        style="@style/TextViewValueTheme"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight=".45"
+                        android:text="Passenger Name 5" />
+
+                    <TextView
+                        android:id="@+id/passenger_contact_5"
+                        style="@style/TextViewValueTheme"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".55"
+                        android:text="Passenger Contact 5" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/passenger_lay_6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <TextView
+                        android:id="@+id/passenger_name_6"
+                        style="@style/TextViewValueTheme"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight=".45"
+                        android:text="Passenger Name 6" />
+
+                    <TextView
+                        android:id="@+id/passenger_contact_6"
+                        style="@style/TextViewValueTheme"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".55"
+                        android:text="Passenger Contact 6" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/passenger_details"
+                    style="@style/TextViewKeyTheme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="5dp"
+                    android:drawableBottom="@drawable/ic_keyboard_arrow_down_black_24px"
+                    android:gravity="center_horizontal"
+                    android:text="Passenger Details" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@android:color/white"
+                        android:elevation="2dp">
+
+                        <TextView
+                            android:id="@+id/upload_documents"
+                            style="@style/TextViewKeyTheme"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="5dp"
+                            android:drawableLeft="@drawable/ic_paper_clip"
+                            android:gravity="center"
+                            android:paddingEnd="20dp"
+                            android:text="  Select Duty Slip  "
+                            android:textAlignment="center" />
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/view_documents"
+                        style="@style/TextViewKeyTheme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dp"
+
+                        android:gravity="center"
+                        android:paddingRight="20dp"
+                        android:text="View"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/darker_gray" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@android:color/white"
+                        android:elevation="2dp">
+
+                        <TextView
+
+                            android:id="@+id/upload_documents1"
+                            style="@style/TextViewKeyTheme"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="5dp"
+                            android:drawableLeft="@drawable/ic_paper_clip"
+                            android:gravity="center"
+                            android:paddingRight="20dp"
+                            android:text="  Select Other Slip 1"
+                            android:textAlignment="center" />
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+
+                        android:id="@+id/view_documents1"
+                        style="@style/TextViewKeyTheme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dp"
+
+                        android:gravity="center"
+                        android:paddingRight="20dp"
+                        android:text="View"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/holo_blue_dark" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@android:color/white"
+                        android:elevation="2dp">
+
+                        <TextView
+                            android:id="@+id/upload_documents2"
+                            style="@style/TextViewKeyTheme"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="5dp"
+                            android:drawableLeft="@drawable/ic_paper_clip"
+                            android:gravity="center"
+                            android:paddingRight="20dp"
+                            android:text="  Select Other Slip 2"
+                            android:textAlignment="center" />
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/view_documents2"
+                        style="@style/TextViewKeyTheme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="center"
+                        android:paddingRight="20dp"
+                        android:text="View"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/holo_blue_dark" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@android:color/white"
+                        android:elevation="2dp">
+
+                        <TextView
+                            android:id="@+id/upload_documents3"
+                            style="@style/TextViewKeyTheme"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="5dp"
+                            android:drawableLeft="@drawable/ic_paper_clip"
+                            android:gravity="center"
+                            android:paddingRight="20dp"
+                            android:text="Select Other Slip 3"
+                            android:textAlignment="center" />
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/view_documents3"
+                        style="@style/TextViewKeyTheme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="center"
+                        android:paddingRight="20dp"
+                        android:text="View"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/holo_blue_dark" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:background="@android:color/white"
+                        android:elevation="2dp">
+
+                        <TextView
+                            android:id="@+id/upload_documents4"
+                            style="@style/TextViewKeyTheme"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="5dp"
+                            android:drawableLeft="@drawable/ic_paper_clip"
+                            android:gravity="center"
+                            android:paddingRight="20dp"
+                            android:text="  Select Other Slip 4"
+                            android:textAlignment="center" />
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/view_documents4"
+                        style="@style/TextViewKeyTheme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dp"
+
+                        android:gravity="center"
+                        android:paddingRight="20dp"
+                        android:text=" View"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/holo_blue_dark" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginStart="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:text="Other Extras Slip Amount"
+                        style="@style/TextViewKeyTheme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+
+                        android:layout_weight="1"
+                        android:background="@android:color/white"
+                        android:elevation="2dp">
+
+                        <EditText
+                            style="@style/TextViewKeyTheme"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="5dp"
+                            android:gravity="center"
+                            android:hint="Extras"
+                            android:inputType="number"
+                            android:paddingRight="20dp"
+                            android:textAlignment="center" />
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/upload_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:backgroundTint="@color/newgreen"
+                    android:text="Upload Duty Slips"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+
+        </FrameLayout>
+    </ScrollView>
+
+
+</LinearLayout>
