@@ -10,14 +10,11 @@ import android.os.Environment;
 import android.util.SparseBooleanArray;
 import android.view.ActionMode;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentTransaction;
@@ -31,8 +28,8 @@ import com.sp.whatsthestatus.ImageViewer;
 import com.sp.whatsthestatus.R;
 import com.sp.whatsthestatus.RecyclerClick_Listener;
 import com.sp.whatsthestatus.RecyclerTouchListener;
-import com.sp.whatsthestatus.adapter.WAImageAdapter;
 import com.sp.whatsthestatus.WAImageModel;
+import com.sp.whatsthestatus.adapter.WAImageAdapter;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -44,7 +41,7 @@ public class WAImageFragment extends Fragment {
     RecyclerView recyclerView;
     FragmentActivity activity;
     ProgressBar progressBar;
-     FloatingActionButton fab;
+    FloatingActionButton fab;
     WAImageAdapter waImageAdapter;
 
     ArrayList<WAImageModel> arrayList = new ArrayList<>();
@@ -52,7 +49,8 @@ public class WAImageFragment extends Fragment {
     private static View v;
     private ActionMode mActionMode;
     Fragment frg;
-    FragmentTransaction ft=null;
+    FragmentTransaction ft = null;
+    List<String> selectedList;
 
     public WAImageFragment() {
         // Required empty public constructor
@@ -64,10 +62,11 @@ public class WAImageFragment extends Fragment {
                              Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.fragment_wa_image, container, false);
         activity = getActivity();
+        selectedList=new ArrayList<>();
 
         mInstance = this;
         swipeRefreshLayout = (SwipeRefreshLayout) v.findViewById(R.id.ref);
-        recyclerView =  v.findViewById(R.id.recyclerview_wa_image);
+        recyclerView = v.findViewById(R.id.recyclerview_wa_image);
         progressBar = (ProgressBar) v.findViewById(R.id.progressbar_wa);
 
         populateRecyclerView();
@@ -106,37 +105,40 @@ public class WAImageFragment extends Fragment {
     private void implementRecyclerViewClickListeners() {
 
         recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getContext(), recyclerView, new RecyclerClick_Listener() {
-                    @Override
-                    public void onClick(View view, int position) {
-                        //If ActionMode not null select item
-                        if (mActionMode != null)
-                            onListItemSelect(position);
-                        else {
-                            String str = waImageAdapter.getItem(position).getPath();
-                            try {
-                                Intent intent = new Intent(getActivity(), ImageViewer.class);
-                                intent.putExtra("pos", str);
-                                intent.putExtra("position", position);
-                                startActivityForResult(intent, 1);
-                            } catch (Throwable e) {
-                                throw new NoClassDefFoundError(e.getMessage());
-                            }
-                        }
+            @Override
+            public void onClick(View view, int position) {
+                //If ActionMode not null select item
+                if (mActionMode != null)
+                    onListItemSelect(position);
+                else {
+                    String str = waImageAdapter.getItem(position).getPath();
+                    try {
+                        Intent intent = new Intent(getActivity(), ImageViewer.class);
+                        intent.putExtra("pos", str);
+                        intent.putExtra("position", position);
+                        startActivityForResult(intent, 1);
+                    } catch (Throwable e) {
+                        throw new NoClassDefFoundError(e.getMessage());
                     }
+                }
+            }
 
-                    @Override
-                    public void onLongClick(View view, int position) {
-                        //Select item on long click
-                        mActionMode = null;
-                        onListItemSelect(position);
-                    }
-                }));
+            @Override
+            public void onLongClick(View view, int position) {
+                //Select item on long click
+                mActionMode = null;
+                onListItemSelect(position);
+            }
+        }));
     }
 
 
     //List item select method
     private void onListItemSelect(int position) {
         waImageAdapter.toggleSelection(position);//Toggle the selection
+        if (!selectedList.contains(position))
+            selectedList.add(arrayList.get(position).getPath());
+
         List<Fragment> fragments;
 
         boolean hasCheckedItems = waImageAdapter.getSelectedCount() > 0;//Check if any items are already selected or not
@@ -144,13 +146,12 @@ public class WAImageFragment extends Fragment {
 
         if (hasCheckedItems && mActionMode == null) {
             // there are some selected items, start the actionMode
-       //     mActionMode = ((AppCompatActivity) getActivity()).startSupportActionMode(new ToolbarActionModeCallback(getActivity(), new GenericAdapter<WAImageAdapter>(waImageAdapter), arrayList, new InstanceHandler<WAImageFragment>(mInstance)));
-        }
-        else if (!hasCheckedItems && mActionMode != null)
+            //     mActionMode = ((AppCompatActivity) getActivity()).startSupportActionMode(new ToolbarActionModeCallback(getActivity(), new GenericAdapter<WAImageAdapter>(waImageAdapter), arrayList, new InstanceHandler<WAImageFragment>(mInstance)));
+        } else if (!hasCheckedItems && mActionMode != null)
         // there no selected items, finish the actionMode
         {
             mActionMode.finish();
-            mActionMode=null;
+            mActionMode = null;
         }
 
         if (mActionMode != null)
@@ -160,6 +161,7 @@ public class WAImageFragment extends Fragment {
 
 
     }
+
     //Set action mode null after use
     public void setNullToActionMode() {
         if (mActionMode != null)
@@ -167,82 +169,145 @@ public class WAImageFragment extends Fragment {
     }
 
     private void saveAll() {
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
-                activity);
+        if (selectedList.size() > 0) {
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                    activity);
 
-        // set title
-        alertDialogBuilder.setTitle("Save All Status");
+            // set title
+            alertDialogBuilder.setTitle("Save All Status");
 
-        // set dialog message
-        alertDialogBuilder
-                .setMessage("This Action will Save all the available Image Statuses... \nDo you want to Continue?")
-                .setCancelable(false)
-                .setPositiveButton("Yes",new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog,int id) {
-                        // if this button is clicked, close
-                        // current activity
-                        File[] listFiles = new File(new StringBuffer().append(Environment.getExternalStorageDirectory().getAbsolutePath()).append("/WhatsApp/Media/.Statuses/").toString()).listFiles();
-                        if (waImageAdapter.getItemCount() == 0) {
-                            Toast.makeText(activity, "No Status available to Save...", Toast.LENGTH_SHORT).show();
-                        } else {
-                            int i = 0;
-                            while (i < listFiles.length) {
-                                try {
-                                    File file = listFiles[i];
-                                    String str = file.getName().toString();
-                                    if (str.endsWith(".jpg") || str.endsWith(".jpeg") || str.endsWith(".png")) {
-                                        HelperMethods helperMethods = new HelperMethods(activity.getApplicationContext());
-                                        HelperMethods.transfer(file);
+            // set dialog message
+            alertDialogBuilder
+                    .setMessage("This Action will Save all the selected Image Statuses... \nDo you want to Continue?")
+                    .setCancelable(false)
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            // if this button is clicked, close
+                            // current activity
+                            File[] listFiles = new File(new StringBuffer().append(Environment.getExternalStorageDirectory().getAbsolutePath()).append("/WhatsApp/Media/.Statuses/").toString()).listFiles();
+                            if (waImageAdapter.getItemCount() == 0) {
+                                Toast.makeText(activity, "No Status available to Save...", Toast.LENGTH_SHORT).show();
+                            } else {
+                                int i = 0;
+                                while (i < selectedList.size()) {
+                                    try {
+                                       // File file = listFiles[selectedList.get(i)];
+                                        File file=new File(selectedList.get(i));
+                                        String str = file.getName().toString();
+                                        if (str.endsWith(".jpg") || str.endsWith(".jpeg") || str.endsWith(".png")) {
+                                            HelperMethods helperMethods = new HelperMethods(activity.getApplicationContext());
+                                            helperMethods.transfer(file);
+                                        }
+                                        i++;
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
+                                        return;
                                     }
-                                    i++;
-                                } catch (Exception e) {
-                                    e.printStackTrace();
-                                    return;
                                 }
+                                Toast.makeText(activity, "Done :)", Toast.LENGTH_SHORT).show();
+                                selectedList.clear();
                             }
-                            Toast.makeText(activity, "Done :)", Toast.LENGTH_SHORT).show();
                         }
-                    }
-                })
-                .setNegativeButton("No",new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog,int id) {
-                        // if this button is clicked, just close
-                        // the dialog box and do nothing
-                        dialog.cancel();
-                    }
-                });
+                    })
+                    .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            // if this button is clicked, just close
+                            // the dialog box and do nothing
+                            dialog.cancel();
+                        }
+                    });
 
 
-        // create alert dialog
-        final AlertDialog alertDialog = alertDialogBuilder.create();
-        alertDialog.setOnShowListener( new DialogInterface.OnShowListener() {
-            @Override
-            public void onShow(DialogInterface arg0) {
-                alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(getResources().getColor(R.color.black_overlay));
-                alertDialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(getResources().getColor(R.color.black_overlay));
-            }
-        });
+            // create alert dialog
+            final AlertDialog alertDialog = alertDialogBuilder.create();
+            alertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
+                @Override
+                public void onShow(DialogInterface arg0) {
+                    alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(getResources().getColor(R.color.black_overlay));
+                    alertDialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(getResources().getColor(R.color.black_overlay));
+                }
+            });
 
-        // show it
-        alertDialog.show();
+            // show it
+            alertDialog.show();
+        } else {
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                    activity);
+
+            // set title
+            alertDialogBuilder.setTitle("Save All Status");
+
+            // set dialog message
+            alertDialogBuilder
+                    .setMessage("This Action will Save all the available Image Statuses... \nDo you want to Continue?")
+                    .setCancelable(false)
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            // if this button is clicked, close
+                            // current activity
+                            File[] listFiles = new File(new StringBuffer().append(Environment.getExternalStorageDirectory().getAbsolutePath()).append("/WhatsApp/Media/.Statuses/").toString()).listFiles();
+                            if (waImageAdapter.getItemCount() == 0) {
+                                Toast.makeText(activity, "No Status available to Save...", Toast.LENGTH_SHORT).show();
+                            } else {
+                                int i = 0;
+                                while (i < listFiles.length) {
+                                    try {
+                                        File file = listFiles[i];
+                                        String str = file.getName().toString();
+                                        if (str.endsWith(".jpg") || str.endsWith(".jpeg") || str.endsWith(".png")) {
+                                            HelperMethods helperMethods = new HelperMethods(activity.getApplicationContext());
+                                            HelperMethods.transfer(file);
+                                        }
+                                        i++;
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
+                                        return;
+                                    }
+                                }
+                                Toast.makeText(activity, "Done :)", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    })
+                    .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            // if this button is clicked, just close
+                            // the dialog box and do nothing
+                            dialog.cancel();
+                        }
+                    });
+
+
+            // create alert dialog
+            final AlertDialog alertDialog = alertDialogBuilder.create();
+            alertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
+                @Override
+                public void onShow(DialogInterface arg0) {
+                    alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(getResources().getColor(R.color.black_overlay));
+                    alertDialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(getResources().getColor(R.color.black_overlay));
+                }
+            });
+
+            // show it
+            alertDialog.show();
+        }
     }
 
 
-
-    public void getStatus(){
+    public void getStatus() {
         File[] listFiles = new File(new StringBuffer().append(Environment.getExternalStorageDirectory().getAbsolutePath()).append("/WhatsApp/Media/.Statuses/").toString()).listFiles();
         if (listFiles != null && listFiles.length >= 1) {
-         //   Arrays.sort(listFiles, LastModifiedFileComparator.LASTMODIFIED_REVERSE);
+            //   Arrays.sort(listFiles, LastModifiedFileComparator.LASTMODIFIED_REVERSE);
         }
         if (listFiles != null) {
             for (File file : listFiles) {
                 if (file.getName().endsWith(".jpg") || file.getName().endsWith(".jpeg") || file.getName().endsWith(".png")) {
-                    WAImageModel model=new WAImageModel(file.getAbsolutePath());
+                    WAImageModel model = new WAImageModel(file.getAbsolutePath());
                     arrayList.add(model);
                 }
             }
         }
     }
+
     public void deleteRows() {
         SparseBooleanArray selected = waImageAdapter
                 .getSelectedIds();//Get selected ids
@@ -260,6 +325,7 @@ public class WAImageFragment extends Fragment {
         mActionMode.finish();//Finish action mode after use
 
     }
+
     public void refresh() {
         if (this.mActionMode != null) {
             this.mActionMode.finish();
@@ -274,9 +340,8 @@ public class WAImageFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == 1 && data != null)  {
-            if(resultCode == -1)
-            {
+        if (requestCode == 1 && data != null) {
+            if (resultCode == -1) {
                 refresh();
             }
             if (resultCode == Activity.RESULT_CANCELED) {
@@ -285,5 +350,9 @@ public class WAImageFragment extends Fragment {
         }
     }
 
-
+    @Override
+    public void onResume() {
+        super.onResume();
+        refresh();
+    }
 }

@@ -2,6 +2,7 @@ package com.sp.whatsthestatus;
 
 import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
@@ -10,9 +11,11 @@ import android.os.Parcelable;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.FileProvider;
@@ -30,21 +33,21 @@ public class VideoPlayer extends AppCompatActivity implements EasyVideoCallback 
     FloatingActionMenu menu;
 
     private EasyVideoPlayer player;
-    int position=0;
+    int position = 0;
     File f;
+
     class SomeClass implements View.OnClickListener {
-        private final  VideoPlayer videoPlayer;
+        private final VideoPlayer videoPlayer;
         private final File file;
 
         class SomeOtherClass implements Runnable {
             private final SomeClass context;
             private final File file;
 
-            SomeOtherClass( SomeClass someClass, File file) {
+            SomeOtherClass(SomeClass someClass, File file) {
                 context = someClass;
                 this.file = file;
             }
-
 
 
             @Override
@@ -72,7 +75,7 @@ public class VideoPlayer extends AppCompatActivity implements EasyVideoCallback 
 
         @Override
         public void onClick(View view) {
-            new  VideoPlayer.SomeClass.SomeOtherClass(this, this.file).run();
+            new VideoPlayer.SomeClass.SomeOtherClass(this, this.file).run();
         }
     }
 
@@ -95,21 +98,21 @@ public class VideoPlayer extends AppCompatActivity implements EasyVideoCallback 
         setContentView(R.layout.activity_video_player);
         helperMethods = new HelperMethods(this);
         this.helperMethods = new HelperMethods(this);
-      //  setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
+        //  setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
 //        getSupportActionBar().setIcon(R.drawable.business_notif);
 //        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 //        getSupportActionBar().setDisplayShowHomeEnabled(true);
-       // getSupportActionBar().hide();
+        // getSupportActionBar().hide();
         Intent intent = getIntent();
         this.f = new File(intent.getExtras().getString("pos"));
         this.position = intent.getExtras().getInt("position");
 
 
-
-        menu =  findViewById(R.id.menu);
+        menu = findViewById(R.id.menu);
         FloatingActionButton floatingActionButton = (FloatingActionButton) findViewById(R.id.save);
         FloatingActionButton floatingActionButton2 = (FloatingActionButton) findViewById(R.id.rep);
         FloatingActionButton floatingActionButton3 = (FloatingActionButton) findViewById(R.id.dlt);
+        FloatingActionButton floatingActionButton4 = (FloatingActionButton) findViewById(R.id.other);
         if (PreferenceManager.getDefaultSharedPreferences(this).getBoolean("deleteFab", true)) {
             floatingActionButton3.setVisibility(View.VISIBLE);
         } else {
@@ -127,13 +130,13 @@ public class VideoPlayer extends AppCompatActivity implements EasyVideoCallback 
                 if (Build.VERSION.SDK_INT >= 24) {
                     uriForFile = FileProvider.getUriForFile(getApplicationContext(), new StringBuffer().append(getApplicationContext().getPackageName()).append(".provider").toString(), f);
                     try {
-                        intent = new Intent("android.intent.action.SEND");
-                        intent.setType("*/*");
+                        intent = new Intent(Intent.ACTION_SEND);
+                        intent.setType("video/*");
                         intent.setPackage("com.whatsapp");
-                        intent.putExtra("android.intent.extra.STREAM", uriForFile);
+                        intent.putExtra(Intent.EXTRA_STREAM, uriForFile);
                         intent.addFlags(Intent.EXTRA_DOCK_STATE_DESK);
                         startActivity(intent);
-                        startActivity(intent);
+
                         return;
                     } catch (ActivityNotFoundException e) {
                         Toast.makeText(getApplicationContext(), "WhatsApp Not Found on this Phone :(", Toast.LENGTH_SHORT).show();
@@ -142,13 +145,53 @@ public class VideoPlayer extends AppCompatActivity implements EasyVideoCallback 
                 }
                 uriForFile = Uri.parse(new StringBuffer().append("file://").append(f.getAbsolutePath()).toString());
                 try {
-                    intent = new Intent("android.intent.action.SEND");
-                    intent.setType("*/*");
+                    intent = new Intent(Intent.ACTION_SEND);
+                    intent.setType("video/*");
                     intent.setPackage("com.whatsapp");
-                    intent.putExtra("android.intent.extra.STREAM", uriForFile);
+                    intent.putExtra(Intent.EXTRA_STREAM, uriForFile);
                     startActivity(intent);
                 } catch (ActivityNotFoundException e2) {
                     Toast.makeText(getApplicationContext(), "WhatsApp Not Found on this Phone :(", 0).show();
+                }
+            }
+        });
+        floatingActionButton4.setOnClickListener(new View.OnClickListener() {
+
+
+            @SuppressLint("WrongConstant")
+            @Override
+            public void onClick(View view) {
+                Parcelable uriForFile;
+                Intent intent;
+                if (Build.VERSION.SDK_INT >= 24) {
+                    uriForFile = FileProvider.getUriForFile(getApplicationContext(), new StringBuffer().append(getApplicationContext().getPackageName()).append(".provider").toString(), f);
+                    try {
+                        intent = new Intent(Intent.ACTION_SEND);
+                        intent.setType("video/*");
+/*
+                        intent.putExtra(Intent.EXTRA_STREAM, uriForFile);
+                        intent.addFlags(Intent.EXTRA_DOCK_STATE_DESK);
+                        startActivity(intent);*/
+
+                        intent.putExtra(Intent.EXTRA_STREAM, uriForFile);
+                        startActivity(Intent.createChooser(intent, "share"));
+
+
+                        return;
+                    } catch (ActivityNotFoundException e) {
+                        //   Toast.makeText(getApplicationContext(), "WhatsApp Not Found on this Phone :(", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                }
+                uriForFile = Uri.parse(new StringBuffer().append("file://").append(f.getAbsolutePath()).toString());
+                try {
+                    intent = new Intent(Intent.ACTION_SEND);
+                    intent.setType("video/*");
+
+                    intent.putExtra(Intent.EXTRA_STREAM, uriForFile);
+                    startActivity(intent);
+                } catch (ActivityNotFoundException e2) {
+                    // Toast.makeText(getApplicationContext(), "WhatsApp Not Found on this Phone :(", 0).show();
                 }
             }
         });
@@ -156,25 +199,26 @@ public class VideoPlayer extends AppCompatActivity implements EasyVideoCallback 
 
             @Override
             public void onClick(View view) {
-//                AlertDialog.Builder builder = new AlertDialog.Builder(this.this$0);
-//                builder.setMessage("Sure to Delete this Video?").setNegativeButton("Nope", new DialogInterface.OnClickListener(this) {
-//
-//                    @Override
-//                    public void onClick(DialogInterface dialogInterface, int i) {
-//                        dialogInterface.dismiss();
-//                    }
-//                }).setPositiveButton("Delete", new DialogInterface.OnClickListener() {
-//
-//
-//                    @Override
-//                    public void onClick(DialogInterface dialogInterface, int i) {
-//                        sendBackData();
-//                        Toast.makeText(getApplicationContext(), "Video Deleted", Toast.LENGTH_SHORT).show();
-//                    }
-//                });
-//                builder.create().show();
-                sendBackData();
-                Toast.makeText(getApplicationContext(), "Video Deleted", Toast.LENGTH_SHORT).show();
+                AlertDialog.Builder builder = new AlertDialog.Builder(VideoPlayer.this);
+                builder.setMessage("Sure to Delete this Video?").
+                        setNegativeButton("Nope", new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        sendBackData();
+                        Toast.makeText(getApplicationContext(), "Video Deleted", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                //builder.create().show();
+                AlertDialog alert = builder.create();
+                alert.show();
+
+                Button nbutton = alert.getButton(DialogInterface.BUTTON_NEGATIVE);
+                nbutton.setTextColor(getColor(R.color.colorPrimary));
+                Button pbutton = alert.getButton(DialogInterface.BUTTON_POSITIVE);
+                pbutton.setTextColor(getColor(R.color.colorPrimary));
+                //  sendBackData();
+
             }
         });
         this.player = (EasyVideoPlayer) findViewById(R.id.player);

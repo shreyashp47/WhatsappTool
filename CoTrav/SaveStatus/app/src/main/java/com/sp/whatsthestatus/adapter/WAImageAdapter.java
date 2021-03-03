@@ -46,7 +46,7 @@ public class WAImageAdapter extends
         RequestOptions centerCrop = new RequestOptions().override(holder.imageView.getWidth(), holder.imageView.getHeight()).centerCrop();
         Glide.with(context).asBitmap().apply(centerCrop).load((String) arrayList.get(position).getPath()).transition(BitmapTransitionOptions.withCrossFade()).into(holder.imageView);
 
-        if(mSelectedItemsIds.get(position))
+        if (mSelectedItemsIds.get(position))
             holder.imageViewCheck.setVisibility(View.VISIBLE);
         else
             holder.imageViewCheck.setVisibility(View.GONE);
@@ -72,7 +72,7 @@ public class WAImageAdapter extends
 
     //Toggle selection methods
     public void toggleSelection(int position) {
-        selectView(position, !mSelectedItemsIds.get(position));
+        selectView(position, !mSelectedItemsIds.get(position),arrayList.get(position).getPath());
     }
 
 
@@ -84,7 +84,7 @@ public class WAImageAdapter extends
 
 
     //Put or delete selected position into SparseBooleanArray
-    public void selectView(int position, boolean value) {
+    public void selectView(int position, boolean value,String path) {
         if (value)
             mSelectedItemsIds.put(position, value);
         else
@@ -106,6 +106,7 @@ public class WAImageAdapter extends
     public WAImageModel getItem(int i) {
         return (WAImageModel) arrayList.get(i);
     }
+
     public void updateData(ArrayList<WAImageModel> viewModels) {
         arrayList.clear();
         arrayList.addAll(viewModels);

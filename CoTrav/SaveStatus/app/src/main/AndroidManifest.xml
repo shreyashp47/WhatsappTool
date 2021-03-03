@@ -3,27 +3,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.sp.whatsthestatus">
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_icon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
         android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_icon_round"
+        android:supportsRtl="true"
         android:theme="@style/Theme.SaveStatus">
+        <activity android:name=".activity.MainActivity"></activity>
+        <activity android:name=".activity.StatusActivity" />
         <activity android:name=".ImageViewer" />
         <activity android:name=".VideoPlayer" />
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
 
         <service android:name=".service.NotificationService" />
 
@@ -40,19 +42,20 @@
         <receiver
             android:name=".service.reciever.NotificationReceiver"
             android:enabled="false"
-            android:exported="false"/>
-<!--
+            android:exported="false" />
+
         <provider
             android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
             android:exported="false"
-            android:authorities="com.bestwhatsappstatus.saver.provider"
             android:grantUriPermissions="true">
             <meta-data
-                android:name="androidx.support.FILE_PROVIDER_PATHS"
+                android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />
         </provider>
--->
-
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

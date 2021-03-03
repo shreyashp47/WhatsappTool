@@ -37,7 +37,7 @@ import java.util.List;
 
 
 public class WAVideoFragment extends Fragment {
-    private static  WAVideoFragment mInstance;
+    private static WAVideoFragment mInstance;
     RecyclerView recyclerView;
     FragmentActivity activity;
     ProgressBar progressBar;
@@ -58,7 +58,7 @@ public class WAVideoFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        v=inflater.inflate(R.layout.fragment_wa_video, container, false);
+        v = inflater.inflate(R.layout.fragment_wa_video, container, false);
         activity = getActivity();
         mInstance = this;
         swipeRefreshLayout = (SwipeRefreshLayout) v.findViewById(R.id.ref_wa_video);
@@ -137,13 +137,12 @@ public class WAVideoFragment extends Fragment {
 
         if (hasCheckedItems && mActionMode == null) {
             // there are some selected items, start the actionMode
-        //    mActionMode = ((AppCompatActivity) getActivity()).startSupportActionMode(new ToolbarActionModeCallback(getActivity(),new GenericAdapter<WAVideoAdapter>(waVideoAdapter), arrayList,new InstanceHandler<WAVideoFragment>(mInstance)));
-        }
-        else if (!hasCheckedItems && mActionMode != null)
+            //    mActionMode = ((AppCompatActivity) getActivity()).startSupportActionMode(new ToolbarActionModeCallback(getActivity(),new GenericAdapter<WAVideoAdapter>(waVideoAdapter), arrayList,new InstanceHandler<WAVideoFragment>(mInstance)));
+        } else if (!hasCheckedItems && mActionMode != null)
         // there no selected items, finish the actionMode
         {
             mActionMode.finish();
-            mActionMode=null;
+            mActionMode = null;
         }
 
         if (mActionMode != null)
@@ -153,6 +152,7 @@ public class WAVideoFragment extends Fragment {
 
 
     }
+
     //Set action mode null after use
     public void setNullToActionMode() {
         if (mActionMode != null)
@@ -170,7 +170,7 @@ public class WAVideoFragment extends Fragment {
         alertDialogBuilder
                 .setMessage("This Action will Save all the available Video Statuses... \nDo you want to Continue?")
                 .setCancelable(false)
-                .setPositiveButton("Yes",new DialogInterface.OnClickListener() {
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // if this button is clicked, close
                         // current activity
@@ -197,7 +197,7 @@ public class WAVideoFragment extends Fragment {
                         }
                     }
                 })
-                .setNegativeButton("No",new DialogInterface.OnClickListener() {
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // if this button is clicked, just close
                         // the dialog box and do nothing
@@ -208,7 +208,7 @@ public class WAVideoFragment extends Fragment {
 
         // create alert dialog
         final AlertDialog alertDialog = alertDialogBuilder.create();
-        alertDialog.setOnShowListener( new DialogInterface.OnShowListener() {
+        alertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
             @Override
             public void onShow(DialogInterface arg0) {
                 alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(getResources().getColor(R.color.black_overlay));
@@ -220,20 +220,21 @@ public class WAVideoFragment extends Fragment {
         alertDialog.show();
     }
 
-    public void getStatus(){
+    public void getStatus() {
         File[] listFiles = new File(new StringBuffer().append(Environment.getExternalStorageDirectory().getAbsolutePath()).append("/WhatsApp/Media/.Statuses/").toString()).listFiles();
         if (listFiles != null && listFiles.length >= 1) {
-         //   Arrays.sort(listFiles, LastModifiedFileComparator.LASTMODIFIED_REVERSE);
+            //   Arrays.sort(listFiles, LastModifiedFileComparator.LASTMODIFIED_REVERSE);
         }
         if (listFiles != null) {
             for (File file : listFiles) {
                 if (file.getName().endsWith(".mp4") || file.getName().endsWith(".avi") || file.getName().endsWith(".mkv") || file.getName().endsWith(".gif")) {
-                    WAImageModel model=new WAImageModel(file.getAbsolutePath());
+                    WAImageModel model = new WAImageModel(file.getAbsolutePath());
                     arrayList.add(model);
                 }
             }
         }
     }
+
     public void deleteRows() {
         SparseBooleanArray selected = waVideoAdapter
                 .getSelectedIds();//Get selected ids
@@ -251,6 +252,7 @@ public class WAVideoFragment extends Fragment {
         mActionMode.finish();//Finish action mode after use
 
     }
+
     public void refresh() {
         if (this.mActionMode != null) {
             this.mActionMode.finish();
@@ -264,9 +266,8 @@ public class WAVideoFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == 1 && data != null)  {
-            if(resultCode == -1)
-            {
+        if (requestCode == 1 && data != null) {
+            if (resultCode == -1) {
                 refresh();
             }
             if (resultCode == Activity.RESULT_CANCELED) {
@@ -274,6 +275,12 @@ public class WAVideoFragment extends Fragment {
             }
         }
     }
- }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        refresh();
+    }
+}
 
 

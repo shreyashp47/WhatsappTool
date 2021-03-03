@@ -3,6 +3,10 @@ plugins {
 }
 
 android {
+    lintOptions {
+        checkReleaseBuilds false
+     }
+
     compileSdkVersion 30
     buildToolsVersion "29.0.3"
 
@@ -10,8 +14,8 @@ android {
         applicationId "com.sp.whatsthestatus"
         minSdkVersion 23
         targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

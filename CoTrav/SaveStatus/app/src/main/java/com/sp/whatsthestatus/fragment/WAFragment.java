@@ -1,4 +1,4 @@
-package com.sp.whatsthestatus;
+package com.sp.whatsthestatus.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
+import com.sp.whatsthestatus.R;
 import com.sp.whatsthestatus.adapter.ViewPagerWAAdapter;
 import com.sp.whatsthestatus.fragment.WAImageFragment;
 import com.sp.whatsthestatus.fragment.WAVideoFragment;
@@ -31,9 +32,11 @@ public class WAFragment extends Fragment {
         viewPager = (ViewPager) v.findViewById(R.id.viewPager_wa);
         tabLayout =   v.findViewById(R.id.tab_layout_wa);
         viewPager.setOffscreenPageLimit(2);
+
         ViewPagerWAAdapter adapter = new ViewPagerWAAdapter(getChildFragmentManager());
         adapter.addTabs("Images",new WAImageFragment());
         adapter.addTabs("Videos",new WAVideoFragment());
+        adapter.addTabs("Saved",new WASavedFragment());
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
         return v;

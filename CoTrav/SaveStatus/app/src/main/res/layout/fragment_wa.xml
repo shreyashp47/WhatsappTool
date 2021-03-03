@@ -13,6 +13,7 @@
         <com.google.android.material.tabs.TabLayout
             android:layout_width="match_parent"
             app:tabIndicatorHeight="3dp"
+            app:tabSelectedTextColor="@color/colorPrimary"
             android:layout_height="wrap_content"
             android:id="@+id/tab_layout_wa">
         </com.google.android.material.tabs.TabLayout>
