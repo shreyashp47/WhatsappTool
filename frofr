@@ -1,0 +1,186 @@
+<strong style="font-size:12px;" id="rules_display">
+                                           <div id="rule_1"><ul><li>Expat should not travel outside India post submission of his application. Else, it will be closed automatically, and we will have to re-submit the application (additional charges applicable)</li><li>Late penalty will be applicable Between 500 INR to 21,500 INR or if any changes happens in guidelines</li><li>Processing timeline 10-15 working days.</li></ul></div>
+                                           <div id="rule_2"><ul><li>Expat should not travel outside India post submission of his application. Else, it will be closed automatically, and we will have to re-submit the application (additional charges applicable)</li><li>Late penalty will be applicable Between 500 INR to 21,500 INR or any other amount as applicable</li><li>Processing timeline 10-15 working days.</li></ul>
+</div>
+                                           <div id="rule_3"><ul><li>Expat should not travel outside India post submission of his application. Else, it will be closed automatically, and we will have to re-submit the application (additional charges applicable)</li><li>Processing timeline 10-15 working days.</li></ul>
+</div>
+                                           <div id="rule_4"><ul><li>Expat should not travel outside India post submission of his application. Else, it will be closed automatically, and we will have to re-submit the application (additional charges applicable)</li><li>Gov. Fee as Applicable.</li><li>Processing timeline 10-15 working days. </li></ul>  
+</div>
+                                           <div id="rule_5"><ul><li>Expat should not travel outside India post submission of his application. Else, it will be closed automatically, and we will have to re-submit the application (additional charges applicable)</li><li>Processing timeline 10-15 working days.</li></ul> 
+</div>
+                                           <div id="rule_6"><ul><li>Expat should not travel outside India post submission of his application. Else, it will be closed automatically, and we will have to re-submit the application (additional charges applicable)</li><li>Gov. Fee as Applicable.</li><li>Processing timeline 10-15 working days. </li></ul> 
+</div>
+                                           <div id="rule_7"><ul><li>Expat should not travel outside India post submission of his application. Else, it will be closed automatically, and we will have to re-submit the application (additional charges applicable)</li><li>Gov. Fee as Applicable.</li><li>Processing timeline 10-15 working days. </li><li>Late penalty will be applicable Between 500 INR to 21,500 INR if not able to get it done within 8 weeks of obtaining a new passport.</li></ul>
+</div>
+                                           <div id="rule_8"><ul><li>Post submission of the application expat won't able to travel outside India otherwise FRRO may close the application.</li><li>FRRO may ask Additional documents post submitting the application.</li><li>Fees depend upon FRRO/FRO.</li></ul>
+</div>
+                                           <div id="rule_9"><ul><li>Post submission of the application expat won't able to travel outside India otherwise FRRO may close the application.</li><li>FRRO may ask Additional documents post submitting the application.</li><li>Fees depend upon FRRO/FRO.</li></ul>
+</div>
+                                           <div id="rule_10"><ul><li>Post submission of the application expat won't able to travel outside India otherwise FRRO may close the application.</li><li>FRRO may ask Additional documents post submitting the application.</li><li>Fees depend upon FRRO/FRO.</li></ul></div>
+                                       </strong>
+
+---------------------------------------------------------------------------------
+<input type="hidden" id="doc_1_txt"
+						name="doc_1_txt" value="Personal details form">
+            <input type="hidden" id="doc_2_txt" name="doc_2_txt" value="Colour Scan Photograph (3.5 cm * 3.5 cm)">
+            <input type="hidden" id="doc_3_txt" name="doc_3_txt" value="Copy of Valid Passport">
+            <input type="hidden" id="doc_4_txt" name="doc_4_txt" value="Copy of Visa Along with Arrival Stamp">
+            <input type="hidden" id="doc_5_txt" name="doc_5_txt" value="Copy of Employment Contract (duration, salary and place should be mentioned on it)">
+            <input type="hidden" id="doc_6_txt" name="doc_6_txt" value="Hotel Form- C (if staying at the Hotel)">
+            <input type="hidden" id="doc_7_txt" name="doc_7_txt" value="Copy of Lease Deed (Notarized if 11 months and Registered if more than 11 months)">
+            <input type="hidden" id="doc_8_txt" name="doc_8_txt" value="Copy of Resume/CV">
+           <input type="hidden" id="doc_9_txt" name="doc_9_txt" value="Monthly/Annual Salary Certificate">
+            <input type="hidden" id="doc_10_txt" name="doc_10_txt" value="Copy of Educational Certificate (Translated in English by Certified Vendor)">
+            <input type="hidden" id="doc_11_txt" name="doc_11_txt" value="Copy of Non Availability Certificate (on company's letterhead, duly signed and stamped)">
+           <input type="hidden" id="doc_12_txt" name="doc_12_txt" value="Copy of Job Profile Letter/Job History (on company's letterhead, duly signed and stamped)">
+           <input type="hidden" id="doc_13_txt" name="doc_13_txt" value="Request Letter (on company's letterhead, duly signed and stamped)">
+            <input type="hidden" id="doc_14_txt" name="doc_14_txt" value="Undertaking Letter (on company's letterhead, duly signed and stamped">
+           <input type="hidden" id="doc_15_txt" name="doc_15_txt" value="Copy of Undertaker Govt. Id/Address Proof">
+           <input type="hidden" id="doc_16_txt" name="doc_16_txt" value="Personal details form">
+            <input type="hidden" id="doc_17_txt" name="doc_17_txt" value="Copy of RP/RC or stay visa (if any)">
+           <input type="hidden" id="doc_18_txt" name="doc_18_txt" value="Copy of PAN Card">
+           <input type="hidden" id="doc_19_txt" name="doc_19_txt" value="Copy of ITR">
+           <input type="hidden" id="doc_20_txt" name="doc_20_txt" value="Copy of updated Form- 16">
+            <input type="hidden" id="doc_21_txt" name="doc_21_txt" value="Copy of updated Form- 26 AS">
+            <input type="hidden" id="doc_22_txt" name="doc_22_txt" value="Or Any other document as needed by the Authorities">
+            <input type="hidden" id="doc_23_txt" name="doc_23_txt" value="Copy of Undertaker Govt. Id/Address Proof">
+            <input type="hidden" id="doc_24_txt" name="doc_24_txt" value="Copy of Passport">
+            <input type="hidden" id="doc_25_txt" name="doc_25_txt" value="Copy of RP/Stay Visa">
+            <input type="hidden" id="doc_26_txt" name="doc_26_txt" value="Request Letter (on plain page, duly signed by Applicant)">
+            <input type="hidden" id="doc_27_txt" name="doc_27_txt" value="Copy of Transfer certificate">
+            <input type="hidden" id="doc_28_txt" name="doc_28_txt" value="Copy of Undertaker Govt. Id/Address Proof">
+            <input type="hidden" id="doc_29_txt" name="doc_29_txt" value="Request Letter (on plain page, duly signed by Applicant)">
+            <input type="hidden" id="doc_30_txt" name="doc_30_txt" value="Copy of RP/Stay Visa if any">
+            <input type="hidden" id="doc_31_txt"  name="doc_31_txt" value="Copy of Employment Contract (All)">
+            <input type="hidden" id="doc_32_txt"  name="doc_32_txt" value="Copy of Lease Deed (Notarized if 11 months and Registered if more than 11 months) (All)">
+            <input type="hidden" id="doc_33_txt" name="doc_33_txt" value="Hotel Form- C (All if staying at the Hotel)">
+            <input type="hidden" id="doc_34_txt" name="doc_34_txt" value="Copy of Pan Card (Applicant)">
+            <input type="hidden" id="doc_35_txt" name="doc_35_txt" value="Copy of ITR (Applicant)">
+            <input type="hidden" id="doc_36_txt" name="doc_36_txt" value="Copy of Form 16 (Applicant)">
+            <input type="hidden" id="doc_37_txt" name="doc_37_txt" value="Colour Scan Photograph (3.5 cm * 3.5 cm)">
+            <input type="hidden" id="doc_38_txt" name="doc_38_txt" value="LETTER FROM EMBASSY/ MISSION: Letter/Proof from concerned embassy/mission where the applicant has applied/intends to apply for visa">
+             <input type="hidden" id="doc_39_txt" name="doc_39_txt" value="Copy of Birth Certificate">
+             <input type="hidden" id="doc_40_txt" name="doc_40_txt" value="Discharge Summary">
+             <input type="hidden" id="doc_41_txt" name="doc_41_txt" value="Copy of Passport (Parents)">
+             <input type="hidden" id="doc_42_txt" name="doc_42_txt" value="Copy of Visa (Parents)">
+             <input type="hidden" id="doc_43_txt" name="doc_43_txt" value="Copy of RP/Stay Visa if any (Parents)">
+             <input type="hidden" id="doc_44_txt" name="doc_44_txt" value="Copy of Employment Contract (Parents)">
+             <input type="hidden" id="doc_45_txt" name="doc_45_txt" value="Request Letter (on company's letterhead, duly signed by Applicant)">
+            <input type="hidden" id="doc_46_txt" name="doc_46_txt" value="Copy of Visa if any">
+            <input type="hidden" id="doc_47_txt" name="doc_47_txt" value="Employment Contract">
+            <input type="hidden" id="doc_48_txt" name="doc_48_txt" value="Owner Details (Contact Number, Email ID, Address, Date of Birth)">
+            <input type="hidden" id="doc_49_txt" name="doc_49_txt" value="Authorized Signatory Details (Contact Number for OTP, Email ID, Address, Designation, Date of Birth)">
+            <input type="hidden" id="doc_50_txt" name="doc_50_txt" value="Colour Scan Photograph (3.5 cm * 3.5 cm)">
+            <input type="hidden" id="doc_51_txt" name="doc_51_txt" value="Signed and filled in Police verification form">
+            <input type="hidden" id="doc_52_txt" name="doc_52_txt" value="Self-attested address proof of authorized signatory">
+            <input type="hidden" id="doc_53_txt" name="doc_53_txt" value="Undertaking letter by authorised signatory">
+            
+
+
+
+
+--------------------------------------------------
+if(request_type == 1){$('#rule_1').show();
+        $('#doc_1').show();
+        var doc_array = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+        $('#doc_select_1').empty();
+        for (i = 0; i != doc_array.length; i++){
+            $('#doc_select_1').append('<option value="'+$('#doc_'+doc_array[i]+'_txt').val()+'">'+$('#doc_'+doc_array[i]+'_txt').val()+'</option>');
+        }
+        }else{$('#rule_1').hide();}
+        
+        
+        if(request_type == 2){
+            var doc_array = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,17,18,19,20,21,22];
+            $('#doc_select_1').empty();
+        for (i = 0; i != doc_array.length; i++){
+            $('#doc_select_1').append('<option value="'+$('#doc_'+doc_array[i]+'_txt').val()+'">'+$('#doc_'+doc_array[i]+'_txt').val()+'</option>');
+        }
+        }else{$('#rule_2').hide();}
+        
+        
+        if(request_type == 3){$('#rule_3').show();
+            
+            var doc_array = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,17,18,19,20,21,23];
+            $('#doc_select_1').empty();
+        for (i = 0; i != doc_array.length; i++){
+            $('#doc_select_1').append('<option value="'+$('#doc_'+doc_array[i]+'_txt').val()+'">'+$('#doc_'+doc_array[i]+'_txt').val()+'</option>');
+        }
+        }else{$('#rule_3').hide();}
+        
+        
+        if(request_type == 4){$('#rule_4').show();
+            var doc_array = [2,3,4,5,6,7,13];
+            $('#doc_select_1').empty();
+        for (i = 0; i != doc_array.length; i++){
+            $('#doc_select_1').append('<option value="'+$('#doc_'+doc_array[i]+'_txt').val()+'">'+$('#doc_'+doc_array[i]+'_txt').val()+'</option>');
+        }
+        }else{$('#rule_4').hide();}
+        
+        
+        if(request_type == 5){$('#rule_5').show();
+            
+            var doc_array = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,25,27];
+            $('#doc_select_1').empty();
+        for (i = 0; i != doc_array.length; i++){
+            $('#doc_select_1').append('<option value="'+$('#doc_'+doc_array[i]+'_txt').val()+'">'+$('#doc_'+doc_array[i]+'_txt').val()+'</option>');
+        }
+        }else{$('#rule_5').hide();}
+        
+        
+        if(request_type == 6){$('#rule_6').show();
+            var doc_array = [1,2,3,4,5,6,7,11,12,26];
+            $('#doc_select_1').empty();
+        for (i = 0; i != doc_array.length; i++){
+            $('#doc_select_1').append('<option value="'+$('#doc_'+doc_array[i]+'_txt').val()+'">'+$('#doc_'+doc_array[i]+'_txt').val()+'</option>');
+        }
+        }else{$('#rule_6').hide();}
+        
+        
+        if(request_type == 7){$('#rule_7').show();
+            
+            var doc_array = [1,2,3,4,5,6,7,18,19,20,21,25,38,45];
+            $('#doc_select_1').empty();
+        for (i = 0; i != doc_array.length; i++){
+            $('#doc_select_1').append('<option value="'+$('#doc_'+doc_array[i]+'_txt').val()+'">'+$('#doc_'+doc_array[i]+'_txt').val()+'</option>');
+        }        
+        }else{$('#rule_7').hide();}
+        
+        if(request_type == 8){$('#rule_8').show();
+            
+            var doc_array = [1,2,3,4,5,6,7,13,25];
+            $('#doc_select_1').empty();
+        for (i = 0; i != doc_array.length; i++){
+            $('#doc_select_1').append('<option value="'+$('#doc_'+doc_array[i]+'_txt').val()+'">'+$('#doc_'+doc_array[i]+'_txt').val()+'</option>');
+        }
+        }else{$('#rule_8').hide();}
+        
+        
+        if(request_type == 9){$('#rule_9').show();
+        
+            var doc_array = [1,2,3,4,5,6,32,39,40,41,42,43,44,45];
+            $('#doc_select_1').empty();
+        for (i = 0; i != doc_array.length; i++){
+            $('#doc_select_1').append('<option value="'+$('#doc_'+doc_array[i]+'_txt').val()+'">'+$('#doc_'+doc_array[i]+'_txt').val()+'</option>');
+        }
+        }else{$('#rule_9').hide();}
+        
+        
+        if(request_type == 10){$('#rule_10').show();
+            
+            var doc_array = [1,3,4,5,7,48,49,50];
+            $('#doc_select_1').empty();
+        for (i = 0; i != doc_array.length; i++){
+            $('#doc_select_1').append('<option value="'+$('#doc_'+doc_array[i]+'_txt').val()+'">'+$('#doc_'+doc_array[i]+'_txt').val()+'</option>');
+        }
+        }else{$('#rule_10').hide();}
+
+
+
+
+////////////////////////////////////////
+
+a['Colour Scan Photograph (3.5 cm * 3.5 cm)'] = "/home/test/abc.jpg"
+
+A S Puri	9718599202	aspuri@taxivaxi.com
+

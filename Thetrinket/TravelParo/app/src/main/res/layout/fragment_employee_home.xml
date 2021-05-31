@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.home.EmployeeHomeFragment">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/taxiCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:elevation="10dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:layout_height="match_parent"
+            android:background="#578ABA56">
+
+            <ImageView
+                android:id="@+id/taxi_img"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_baseline_local_taxi_24"
+                app:layout_constraintEnd_toEndOf="@+id/view_taxi"
+                app:layout_constraintStart_toStartOf="@+id/view_taxi"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/black" />
+            <TextView
+                android:id="@+id/u_taxi"
+                style="@style/NormalText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Upcoming Unapproved :"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/ua_taxi"
+                app:layout_constraintTop_toTopOf="@+id/taxi_img" />
+            <TextView
+                android:id="@+id/unapproved_taxi"
+                style="@style/HeadingTow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="0"
+                app:layout_constraintStart_toEndOf="@+id/u_taxi"
+                app:layout_constraintBottom_toBottomOf="@+id/u_taxi"/>
+
+            <TextView
+                android:id="@+id/ua_taxi"
+                style="@style/NormalText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Upcoming Approved :"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/view_taxi" />
+
+            <TextView
+                android:id="@+id/approved_taxi"
+                style="@style/HeadingTow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="0"
+                app:layout_constraintStart_toEndOf="@+id/u_taxi"
+                app:layout_constraintBottom_toBottomOf="@+id/ua_taxi"/>
+
+            <TextView
+                android:id="@+id/view_taxi"
+                style="@style/NormalText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:drawableEnd="@drawable/ic_right_chevron_24"
+                android:text="View Hotel Booking "
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/taxi_img" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/hotel_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:elevation="10dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/taxiCard">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:layout_height="match_parent"
+            android:background="#578ABA56">
+
+            <ImageView
+                android:id="@+id/hotel_image"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_hotel"
+                app:layout_constraintEnd_toEndOf="@+id/view_hotel"
+                app:layout_constraintStart_toStartOf="@+id/view_hotel"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/black" />
+
+            <TextView
+                android:id="@+id/u_hotel"
+                style="@style/NormalText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Upcoming Unapproved :"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/ua_hotel"
+                app:layout_constraintTop_toTopOf="@+id/hotel_image" />
+            <TextView
+                android:id="@+id/unapproved_hotel"
+                style="@style/HeadingTow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="0"
+                app:layout_constraintStart_toEndOf="@+id/u_hotel"
+                app:layout_constraintBottom_toBottomOf="@+id/u_hotel"/>
+
+            <TextView
+                android:id="@+id/ua_hotel"
+                style="@style/NormalText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Upcoming Approved :"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/view_hotel" />
+
+            <TextView
+                android:id="@+id/approved_hotel"
+                style="@style/HeadingTow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="0"
+                app:layout_constraintStart_toEndOf="@+id/u_hotel"
+                app:layout_constraintBottom_toBottomOf="@+id/ua_hotel"/>
+
+            <TextView
+                android:id="@+id/view_hotel"
+                style="@style/NormalText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:drawableEnd="@drawable/ic_right_chevron_24"
+                android:text="View Hotel Booking "
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hotel_image" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

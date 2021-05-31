@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/ic_store"
+            android:title="Home" />
+        <item
+            android:id="@+id/hot"
+            android:icon="@drawable/ic_baseline_hot_24"
+            android:title="Hot" />
+        <item
+            android:id="@+id/categories"
+            android:icon="@drawable/ic_categories"
+            android:title="Cart" />
+        <item
+            android:id="@+id/profile"
+            android:icon="@drawable/ic_baseline_person_outline_24"
+            android:title="Profile" />
+        <item
+            android:id="@+id/about"
+            android:icon="@drawable/ic_outline_info_24"
+            android:title="About Us" />
+        <item
+            android:id="@+id/setting"
+            android:icon="@drawable/ic_outline_settings_24"
+            android:title="Settings" />
+    </group>
+</menu>

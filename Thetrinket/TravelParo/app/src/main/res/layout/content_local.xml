@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_local"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:background="@color/white"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_local">
+
+    <ScrollView
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="11dp"
+        android:isScrollContainer="false">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="21dp"
+                android:src="@drawable/building" />
+
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                android:id="@+id/radio_pickup_city"
+                android:layout_width="155dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="30dp"
+                android:hint="Assessment Code"
+                android:paddingLeft="23dp"
+                android:paddingStart="23dp"
+                android:textSize="@dimen/text_size" />
+
+            <View
+                style="@style/Divider"
+                android:layout_width="110dp"
+
+                android:layout_below="@+id/radio_pickup_city"
+                android:layout_marginLeft="30dp"
+                android:layout_marginStart="30dp" />
+
+            <ImageView
+                android:id="@+id/taxi_type"
+                android:layout_width="25dp"
+                android:layout_height="55dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="145dp"
+                android:layout_marginRight="145dp"
+                android:layout_marginTop="20dp"
+
+                android:src="@drawable/taxi_sign" />
+
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                android:id="@+id/taxitype"
+                android:layout_width="125dp"
+                android:layout_height="35dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="30dp"
+                android:hint="Assessment Code"
+                android:paddingLeft="3dp"
+                android:paddingStart="3dp"
+                android:textSize="@dimen/text_size" />
+
+            <View
+                style="@style/Divider"
+                android:layout_width="140dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/taxitype"
+                android:layout_marginLeft="43dp"
+                android:layout_marginStart="43dp" />
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="55dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/radio_pickup_city"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/dot_pickup_icon" />
+
+            <TextView
+                android:id="@+id/local_pickup"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/radio_pickup_city"
+                android:clickable="true"
+                android:hint="@string/pickup_location"
+                android:paddingLeft="30dp"
+                android:paddingStart="30dp"
+                android:paddingTop="32dp"
+                android:maxLines="2"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/taxi_vaxi_text_color_gray"
+                android:textColorHint="@color/taxi_vaxi_text_color_gray"
+                android:textSize="@dimen/text_size" />
+
+            <View
+                android:id="@+id/pickup_divider"
+                style="@style/Divider"
+                android:layout_below="@+id/local_pickup"
+                android:layout_marginLeft="30dp"
+                android:layout_marginStart="30dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/pickup_divider"
+                android:paddingTop="43dp"
+                android:src="@drawable/ic_date_range_black_24dp" />
+
+            <TextView
+                android:id="@+id/local_date"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/pickup_divider"
+                android:layout_marginTop="35dp"
+                android:hint="Pickup Date"
+                android:paddingLeft="30dp"
+                android:paddingStart="30dp"
+                android:paddingTop="11dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/taxi_vaxi_text_color_gray"
+                android:textColorHint="@color/taxi_vaxi_text_color_gray"
+                android:textSize="@dimen/text_size" />
+
+            <View
+                style="@style/Divider"
+                android:layout_width="100dp"
+
+                android:layout_below="@+id/local_date"
+                android:layout_marginLeft="30dp"
+                android:layout_marginStart="30dp" />
+
+            <ImageView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/pickup_divider"
+                android:layout_marginEnd="145dp"
+                android:layout_marginRight="145dp"
+                android:layout_marginTop="43dp"
+
+                android:src="@drawable/ic_access_time_black_24dp" />
+
+            <TextView
+                android:id="@+id/local_time"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_alignLeft="@+id/time"
+                android:layout_alignStart="@+id/time"
+                android:layout_below="@+id/pickup_divider"
+                android:layout_marginTop="35dp"
+                android:hint="Pickup Time"
+                android:paddingEnd="27dp"
+                android:paddingStart="29dp"
+                android:paddingTop="11dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/taxi_vaxi_text_color_gray"
+                android:textColorHint="@color/taxi_vaxi_text_color_gray"
+                android:textSize="@dimen/text_size" />
+
+            <View
+                style="@style/Divider"
+                android:layout_width="140dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/local_time"
+                android:layout_marginLeft="43dp"
+                android:layout_marginStart="43dp" />
+
+            <RelativeLayout
+                android:id="@+id/assessment_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/local_date">
+
+                <ImageView
+                    android:id="@+id/imageView10"
+                    android:layout_width="25dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="21dp"
+                    android:src="@drawable/building" />
+
+                <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                    android:id="@+id/assessment_city"
+                    android:layout_width="155dp"
+                    android:layout_height="25dp"
+                    android:layout_alignBottom="@+id/assessnment"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignTop="@+id/assessnment"
+                    android:hint="Assessment Code"
+                    android:paddingLeft="23dp"
+                    android:paddingStart="23dp"
+                    android:textSize="@dimen/text_size" />
+
+                <View
+                    style="@style/Divider"
+                    android:layout_width="110dp"
+
+                    android:layout_below="@+id/assessment_city"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginStart="30dp" />
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="45dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="144dp"
+                    android:layout_marginRight="144dp"
+                    android:layout_marginTop="27dp"
+                    android:src="@drawable/notedpad_icons" />
+
+                <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                    android:id="@+id/assessnment"
+                    android:layout_width="151dp"
+                    android:layout_height="35dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="30dp"
+                    android:hint="Assessment Code"
+                    android:paddingLeft="3dp"
+                    android:paddingStart="3dp"
+                    android:textSize="@dimen/text_size" />
+
+                <View
+                    style="@style/Divider"
+                    android:layout_width="140dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/assessnment"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginStart="30dp" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="25dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/assessment_layout"
+                android:layout_marginEnd="150dp"
+                android:layout_marginRight="150dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/business_traveller_icon" />
+
+            <TextView
+                android:id="@+id/passengers"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/assessment_layout"
+                android:layout_marginTop="25dp"
+                android:hint="Passengers"
+                android:paddingLeft="30dp"
+                android:paddingStart="30dp"
+                android:paddingTop="11dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/taxi_vaxi_text_color_gray"
+                android:textColorHint="@color/taxi_vaxi_text_color_gray"
+                android:textSize="@dimen/text_size" />
+
+            <View
+                android:id="@+id/view"
+                style="@style/Divider"
+                android:layout_width="100dp"
+                android:layout_below="@+id/passengers"
+                android:layout_marginLeft="30dp"
+                android:layout_marginStart="30dp" />
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="55dp"
+                android:layout_alignStart="@+id/time"
+                android:layout_alignTop="@+id/imageView4"
+                android:layout_marginRight="150dp"
+                android:src="@drawable/package_icon" />
+
+
+            <TextView
+
+                android:id="@+id/packages"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_alignBottom="@+id/view"
+                android:layout_alignStart="@+id/view4"
+                android:hint="Select Packages"
+                android:paddingLeft="5dp"
+                android:paddingStart="5dp"
+                android:paddingTop="11dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/taxi_vaxi_text_color_gray"
+                android:textColorHint="@color/taxi_vaxi_text_color_gray"
+                android:textSize="@dimen/text_size" />
+
+            <View
+                android:id="@+id/view4"
+                style="@style/Divider"
+                android:layout_width="150dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/packages"
+                android:layout_marginLeft="30dp"
+                android:layout_marginStart="30dp" />
+
+            <EditText
+                android:id="@+id/local_reason_for_booking"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/packages"
+                android:layout_marginTop="25dp"
+                android:ems="10"
+                android:hint="Reason for Booking"
+                android:inputType="textMultiLine"
+                android:paddingBottom="12dp"
+                android:paddingLeft="5dp"
+                android:paddingStart="5dp"
+                android:textColor="@color/taxi_vaxi_color_black"
+                android:textColorHint="@color/taxi_vaxi_text_color_gray"
+                android:textSize="@dimen/text_size"
+                android:windowSoftInputMode="adjustPan|adjustResize" />
+
+
+            <Button
+                android:id="@+id/local_submit_button"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/local_reason_for_booking"
+                android:layout_centerInParent="true"
+
+                android:layout_marginTop="35dp"
+                android:backgroundTint="@color/bg_green_text_color"
+                android:elevation="6dp"
+                android:text="Submit"
+                android:textColor="@color/cardview_light_background" />
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

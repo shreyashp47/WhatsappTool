@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout_booking_form"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/taxi_vaxi_color_more_light_gray"
+        tools:context="com.taxivaxi.spoc.BookingStatus.CabStatus">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/bus_status_toolbar"
+            android:layout_width="match_parent"
+            android:elevation="@dimen/tabelevation"
+            android:layout_height="@dimen/toolbar_height_phone_port"
+            android:background="@drawable/navigation_bar"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bus_status_toolbar"
+            android:id="@+id/bus_status_container_1">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+        <com.google.android.material.tabs.TabLayout
+            style="@style/BookingFormTabTheme"
+            android:id="@+id/bus_status_tabLayout"
+            android:layout_width="match_parent"
+            android:elevation="@dimen/tabelevation"
+            android:layout_marginBottom="4dp"
+            android:layout_height="30dp"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+        <!-- View pager to swipe views -->
+        <androidx.viewpager.widget.ViewPager
+            android:layout_below="@+id/bus_status_tabLayout"
+            android:id="@+id/bus_status_pager"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"/>
+            </LinearLayout>
+    </FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bus_status_container_1"
+            android:id="@+id/bus_status_container_2">
+
+        </FrameLayout>
+
+
+
+
+    </RelativeLayout>
+    <!--
+    <android.support.design.widget.NavigationView android:id="@+id/nav_view_booking_form"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/navigation_header"
+        />-->
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

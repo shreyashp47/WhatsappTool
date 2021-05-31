@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="340dp"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:id="@+id/text_relative"
+            android:layout_centerHorizontal="true">
+
+            <com.rey.material.widget.TextView
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/text_preview"
+                android:hint="@string/app_name"
+                android:layout_centerHorizontal="true"
+                android:text="Passenger Details"
+
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="55dp"
+                android:src="@drawable/info_detail"/>
+
+
+        </RelativeLayout>
+        <View style="@style/Divider"
+            android:id="@+id/divider"
+            android:layout_below="@+id/text_relative"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="270dp"
+            android:id="@+id/center_image"
+            android:background="#51ffffff"
+            android:layout_below="@+id/text_relative">
+            <com.rey.material.widget.TextView
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/gender"
+                android:hint="@string/app_name"
+                android:layout_centerHorizontal="true"
+                android:text="Gender"
+
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textSize="12sp" />
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/gender"
+                android:id="@+id/icons"
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/male"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/male_seticon"/>
+                <ImageView
+                    android:id="@+id/female"
+
+                    android:layout_marginStart="20dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/female_seticon"/>
+            </LinearLayout>
+
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                android:layout_width="140dp"
+                android:layout_below="@+id/icons"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="16dp"
+
+                android:layout_height="wrap_content"
+                android:id="@+id/employee_spinner" />
+            <EditText
+                android:layout_below="@+id/icons"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="16dp"
+
+                android:layout_width="155dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/taxi_vaxi_color_black"
+                android:hint="Enter Phone No"
+                android:textColorHint="@color/taxi_vaxi_text_color_gray"
+                android:textSize="@dimen/text_size"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/phone_no"/>
+
+            <ImageView
+                android:layout_marginStart="10dp"
+                android:layout_below="@+id/employee_spinner"
+                android:layout_marginTop="6dp"
+
+                android:src="@drawable/age_icon"
+                android:layout_width="25dp"
+                android:layout_height="55dp" />
+
+            <EditText
+                android:layout_marginTop="15dp"
+                android:textSize="12sp"
+                android:hint="Age"
+                android:layout_marginStart="35dp"
+                android:layout_below="@+id/employee_spinner"
+                android:layout_width="110dp"
+                android:id="@+id/age"
+                android:layout_height="35dp"
+                android:singleLine="true"
+                android:inputType="phone" />
+            <ImageView
+                android:layout_marginTop="5dp"
+
+                android:layout_below="@+id/employee_spinner"
+                android:layout_marginEnd="165dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/id_card"
+                android:layout_width="25dp"
+                android:layout_height="55dp" />
+            <Spinner
+                android:layout_marginEnd="10dp"
+
+                android:id="@+id/id_type"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/employee_spinner"
+                android:layout_alignParentEnd="true"
+                android:layout_width="155dp"
+                android:layout_height="35dp" />
+            <View style="@style/Divider"
+                android:layout_width="155dp"
+                android:layout_marginEnd="10dp"
+
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/id_type"/>
+
+            <EditText
+                android:layout_marginTop="20dp"
+                android:textSize="12sp"
+                android:id="@+id/card_no"
+
+                android:layout_marginEnd="20dp"
+                android:hint="Enter ID Card NO"
+                android:layout_marginStart="35dp"
+                android:layout_below="@+id/id_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+
+
+
+        <com.rey.material.widget.Button
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ok"
+            android:layout_below="@+id/center_image"
+            android:text="ok"
+            app:rd_enable="true"
+            app:rd_rippleType="wave"
+            android:layout_centerInParent="true"
+            android:background="@color/taxi_vaxi_color_black"
+            android:textColor="@color/cardview_light_background" />
+
+    </RelativeLayout>
+
+    </ScrollView>
+</LinearLayout>

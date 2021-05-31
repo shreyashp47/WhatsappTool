@@ -1,0 +1,1781 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/taxi_vaxi_color_more_light_gray"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <RelativeLayout
+            android:id="@+id/container_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:id="@+id/basicDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/vertical_margin"
+                android:elevation="@dimen/statuslistelevation"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@android:color/white"
+                android:orientation="vertical" >
+
+                <!-- #47B4F1 -->
+
+                <TextView
+                    android:id="@+id/txt_titleBasic"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:background="#F5B237"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:textIsSelectable="true"
+                    android:text="Basic Details"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:id="@+id/lay1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_titleBasic"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="165dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="2dp"
+                        android:textIsSelectable="true"
+                        android:text="Booking Reference No:"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/booking_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:textIsSelectable="true"
+                        android:padding="2dp"
+                        android:text=""
+                        android:textColor="@color/txt_geay_color"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lay2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lay1"
+                    android:orientation="horizontal"
+                    android:visibility="gone" >
+
+                    <TextView
+                        android:layout_width="165dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="5dp"
+                        android:textIsSelectable="true"
+                        android:text="Days:"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/b_days"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:padding="5dp"
+                        android:text="2"
+                        android:textIsSelectable="true"
+                        android:textColor="@color/txt_geay_color"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lay3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lay2"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="165dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="2dp"
+                        android:textIsSelectable="true"
+                        android:text="Tour Type:"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/b_tourType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:padding="2dp"
+                        android:text=""
+                        android:textIsSelectable="true"
+                        android:textColor="@color/txt_geay_color"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lay4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lay3"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="165dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="2dp"
+                        android:textIsSelectable="true"
+                        android:text="City:"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/Pickup_Loaction"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:padding="2dp"
+                        android:text=""
+                        android:textIsSelectable="true"
+                        android:textColor="@color/txt_geay_color"
+                        android:textSize="14sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/lay10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lay3"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="165dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="2dp"
+                        android:textIsSelectable="true"
+                        android:text="Check-In Date:"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/check_out"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:padding="2dp"
+                        android:text=""
+                        android:textIsSelectable="true"
+                        android:textColor="@color/txt_geay_color"
+                        android:textSize="14sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/lay12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lay3"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="165dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="2dp"
+                        android:textIsSelectable="true"
+                        android:text="Check-Out Date:"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/check_in"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:padding="2dp"
+                        android:text=""
+                        android:textIsSelectable="true"
+                        android:textColor="@color/txt_geay_color"
+                        android:textSize="14sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/lay13"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lay3"
+                    android:visibility="gone"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="165dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="2dp"
+                        android:textIsSelectable="true"
+                        android:text="Preferred Hotel:"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/prefred_hotel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:padding="2dp"
+                        android:text=""
+                        android:textIsSelectable="true"
+                        android:textColor="@color/txt_geay_color"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:id="@+id/lay11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_below="@+id/lay3"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="165dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="2dp"
+                        android:textIsSelectable="true"
+                        android:text="Room Type:"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/room_type_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:padding="2dp"
+                        android:text=""
+                        android:textIsSelectable="true"
+                        android:textColor="@color/txt_geay_color"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lay14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lay3"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="165dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="2dp"
+                        android:textIsSelectable="true"
+                        android:text="Room Occupancy:"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/ocupancy_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:padding="2dp"
+                        android:text=""
+                        android:textIsSelectable="true"
+                        android:textColor="@color/txt_geay_color"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lay5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lay4"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="165dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="2dp"
+                        android:textIsSelectable="true"
+                        android:text="Booking Date:"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/booking_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:textIsSelectable="true"
+                        android:padding="2dp"
+                        android:text=""
+                        android:textColor="@color/txt_geay_color"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lay6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lay5"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="165dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="2dp"
+                        android:textIsSelectable="true"
+                        android:text="Pickup Date Time:"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/pick_up_date_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:textIsSelectable="true"
+                        android:padding="2dp"
+                        android:text=""
+                        android:textColor="@color/txt_geay_color"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lay8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lay7"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="165dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="2dp"
+                        android:textIsSelectable="true"
+                        android:text="Assesment code:"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/accessment_code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:padding="2dp"
+                        android:textIsSelectable="true"
+                        android:text=""
+                        android:textColor="@color/txt_geay_color"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lay9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lay8"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="165dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="2dp"
+                        android:textIsSelectable="true"
+                        android:text="Reason for booking:"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/booking_reason"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:padding="2dp"
+                        android:textIsSelectable="true"
+                        android:text=""
+                        android:textColor="@color/txt_geay_color"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Spoc Detail -->
+
+            <LinearLayout
+                android:id="@+id/spoc_Details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="@dimen/statuslistelevation"
+                android:padding="@dimen/vertical_margin"
+                android:layout_below="@id/basicDetails"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@android:color/white"
+                android:orientation="vertical" >
+
+                <!-- #47B4F1 -->
+
+                <TextView
+                    android:id="@+id/txt_titleemployee"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:background="#F5B237"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:textIsSelectable="true"
+                    android:text="Employee Details"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/employee_lay1"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:id="@+id/lay_employeename1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_titleBasic"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="165dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:padding="2dp"
+                            android:textIsSelectable="true"
+                            android:text="Employee Name:"
+                            android:textColor="@android:color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/employee_name1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:textIsSelectable="true"
+                            android:padding="2dp"
+                            android:text=""
+                            android:textColor="@color/txt_geay_color"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lay_employeeEmail1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lay_spocname"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="165dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:padding="2dp"
+                            android:textIsSelectable="true"
+                            android:text="Employee Contact Email:"
+                            android:textColor="@android:color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/employee_Email1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:padding="2dp"
+                            android:text=""
+                            android:textIsSelectable="true"
+                            android:textColor="@color/txt_geay_color"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lay_employeecontact1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="165dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:padding="2dp"
+                            android:textIsSelectable="true"
+                            android:text="Employee Contact No:"
+                            android:textColor="@android:color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/employee_contact1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:padding="2dp"
+                            android:text=""
+                            android:textIsSelectable="true"
+                            android:textColor="@color/txt_geay_color"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/employee_lay2"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:id="@+id/lay_employeename2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_titleBasic"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="165dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:padding="2dp"
+                            android:textIsSelectable="true"
+                            android:text="Employee Name:"
+                            android:textColor="@android:color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/employee_name2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:padding="2dp"
+                            android:text=""
+                            android:textIsSelectable="true"
+                            android:textColor="@color/txt_geay_color"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lay_employeeEmail2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lay_spocname"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="165dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:padding="2dp"
+                            android:textIsSelectable="true"
+                            android:text="Employee Contact Email:"
+                            android:textColor="@android:color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/employee_Email2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:padding="2dp"
+                            android:text=""
+                            android:textColor="@color/txt_geay_color"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lay_employeephone2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lay_spocEmail"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="165dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:padding="2dp"
+                            android:textIsSelectable="true"
+                            android:text="Employee Contact No:"
+                            android:textColor="@android:color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/employee_contact2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:padding="2dp"
+                            android:text=""
+                            android:textIsSelectable="true"
+                            android:textColor="@color/txt_geay_color"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/employee_lay3"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:id="@+id/lay_employee3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_titleBasic"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="165dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:padding="2dp"
+                            android:textIsSelectable="true"
+                            android:text="Employee Name:"
+                            android:textColor="@android:color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/employee_name3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:padding="2dp"
+                            android:text=""
+                            android:textIsSelectable="true"
+                            android:textColor="@color/txt_geay_color"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lay_employeeEmail3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lay_spocname"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="165dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:padding="2dp"
+                            android:textIsSelectable="true"
+                            android:text="Employee Contact Email:"
+                            android:textColor="@android:color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/emplopyee_Email3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:textIsSelectable="true"
+                            android:padding="2dp"
+                            android:text=""
+                            android:textColor="@color/txt_geay_color"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lay_employeecontact3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="165dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:padding="2dp"
+                            android:textIsSelectable="true"
+                            android:text="Employee Contact No:"
+                            android:textColor="@android:color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/employee_contact3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:padding="2dp"
+                            android:text=""
+                            android:textIsSelectable="true"
+                            android:textColor="@color/textcolorgrey"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/employee_lay4"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:id="@+id/lay_employee4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_titleBasic"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="165dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:padding="2dp"
+                            android:textIsSelectable="true"
+                            android:text="Employee Name:"
+                            android:textColor="@android:color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/employee_name4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:padding="2dp"
+                            android:text=""
+                            android:textIsSelectable="true"
+                            android:textColor="@color/textcolorgrey"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lay_employeeEmail4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="165dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:padding="2dp"
+                            android:textIsSelectable="true"
+                            android:text="Employee Contact Email:"
+                            android:textColor="@android:color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/employee_Email4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:padding="2dp"
+                            android:text=""
+                            android:textIsSelectable="true"
+                            android:textColor="@color/textcolorgrey"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lay_employeecontact4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="165dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:padding="2dp"
+                            android:textIsSelectable="true"
+                            android:text="Employee Contact No:"
+                            android:textColor="@android:color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/employee_contact4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:padding="2dp"
+                            android:text=""
+                            android:textIsSelectable="true"
+                            android:textColor="@color/txt_geay_color"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/employee_lay5"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:id="@+id/lay_employee5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_titleBasic"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="165dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:padding="2dp"
+                            android:textIsSelectable="true"
+                            android:text="Employee Name:"
+                            android:textColor="@android:color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/employee_name5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:padding="2dp"
+                            android:text=""
+                            android:textIsSelectable="true"
+                            android:textColor="@color/textcolorgrey"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lay_employeeEmail5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lay_employeeEmail5"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="165dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:padding="2dp"
+                            android:textIsSelectable="true"
+                            android:text="Employee Contact Email:"
+                            android:textColor="@android:color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/employee_Email5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:textIsSelectable="true"
+                            android:padding="2dp"
+                            android:text=""
+                            android:textColor="@color/textcolorgrey"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lay_employeecontact5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="165dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:padding="2dp"
+                            android:textIsSelectable="true"
+                            android:text="Employee Contact No:"
+                            android:textColor="@android:color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/employee_contact5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:padding="2dp"
+                            android:text=""
+                            android:textIsSelectable="true"
+                            android:textColor="@color/textcolorgrey"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/employee_lay6"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:id="@+id/lay_employee6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_titleBasic"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="165dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:padding="2dp"
+                            android:textIsSelectable="true"
+                            android:text="Employee Name:"
+                            android:textColor="@android:color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/employee_name6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:padding="2dp"
+                            android:text=""
+                            android:textIsSelectable="true"
+                            android:textColor="@color/textcolorgrey"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lay_employeeEmail6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lay_spocname"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="165dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:padding="2dp"
+                            android:textIsSelectable="true"
+                            android:text="Employee Contact Email:"
+                            android:textColor="@android:color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/employee_Email6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:padding="2dp"
+                            android:text=""
+                            android:textIsSelectable="true"
+                            android:textColor="@color/textcolorgrey"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lay_employeecontact6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lay_spocEmail"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="165dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:padding="2dp"
+                            android:textIsSelectable="true"
+                            android:text="Employee Contact No:"
+                            android:textColor="@android:color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/employee_contact6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:padding="2dp"
+                            android:text=""
+                            android:textIsSelectable="true"
+                            android:textColor="@color/txt_geay_color"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <!-- Ticket Details -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:id="@+id/ticket_lay"
+                android:orientation="vertical"
+                android:layout_below="@+id/taxi_Details"
+                android:background="@color/taxi_vaxi_color_white"
+                android:elevation="@dimen/statuslistelevation"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:padding="@dimen/vertical_margin"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/txt_ticket"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:background="#F5B237"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:textIsSelectable="true"
+                    android:text="Ticket Details"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:id="@+id/lay_ticketno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_titleBasic"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="165dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="2dp"
+                        android:text="Ticket No:"
+                        android:textIsSelectable="true"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/ticket_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:padding="2dp"
+                        android:text=""
+                        android:textIsSelectable="true"
+                        android:textColor="@color/txt_geay_color"
+                        android:textSize="14sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/lay_pnr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_titleBasic"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="165dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="2dp"
+                        android:textIsSelectable="true"
+                        android:text="PNR No:"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/pnr_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:padding="2dp"
+                        android:text=""
+                        android:textIsSelectable="true"
+                        android:textColor="@color/txt_geay_color"
+                        android:textSize="14sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/lay_bus_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_titleBasic"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="165dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="2dp"
+                        android:textIsSelectable="true"
+                        android:text="Bus Type:"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/bus_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:textIsSelectable="true"
+                        android:padding="2dp"
+                        android:text=""
+                        android:textColor="@color/txt_geay_color"
+                        android:textSize="14sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/lay_operator_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_titleBasic"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="165dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="2dp"
+                        android:textIsSelectable="true"
+                        android:text="Operator Name:"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/operator_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:textIsSelectable="true"
+                        android:padding="2dp"
+                        android:text=""
+                        android:textColor="@color/txt_geay_color"
+                        android:textSize="14sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/lay_operator_contact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_titleBasic"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="165dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="2dp"
+                        android:textIsSelectable="true"
+                        android:text="Operator Contact:"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/operator_contact"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:padding="2dp"
+                        android:text=""
+                        android:textIsSelectable="true"
+                        android:textColor="@color/txt_geay_color"
+                        android:textSize="14sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/lay_seat_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_titleBasic"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="165dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="2dp"
+                        android:textIsSelectable="true"
+                        android:text="Seat No:"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/seat_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:padding="2dp"
+                        android:text=""
+                        android:textIsSelectable="true"
+                        android:textColor="@color/txt_geay_color"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+
+            <!-- Driver Details -->
+
+            <LinearLayout
+                android:id="@+id/driver_Details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/spoc_Details"
+                android:layout_marginBottom="10dp"
+                android:elevation="@dimen/statuslistelevation"
+                android:padding="@dimen/vertical_margin"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@android:color/white"
+                android:orientation="vertical" >
+
+                <!-- #47B4F1 -->
+
+                <TextView
+                    android:id="@+id/txt_titledriver"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:background="#F5B237"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:textIsSelectable="true"
+                    android:text="Driver Details"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:id="@+id/lay_drivername"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_titleBasic"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="165dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="2dp"
+                        android:textIsSelectable="true"
+                        android:text="Driver Name:"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/driver_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:padding="2dp"
+                        android:text=""
+                        android:textIsSelectable="true"
+                        android:textColor="@color/txt_geay_color"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/lay_drivercontact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lay_drivername"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="165dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="2dp"
+                        android:textIsSelectable="true"
+                        android:text="Driver Contact No:"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/driver_contact"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:padding="2dp"
+                        android:text=""
+                        android:textIsSelectable="true"
+                        android:textColor="@color/txt_geay_color"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Taxi Details -->
+
+            <LinearLayout
+                android:id="@+id/taxi_Details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/driver_Details"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:elevation="@dimen/statuslistelevation"
+                android:padding="@dimen/vertical_margin"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@android:color/white"
+                android:orientation="vertical" >
+
+                <!-- #47B4F1 -->
+
+                <TextView
+                    android:id="@+id/txt_titletaxi"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:background="#F5B237"
+                    android:padding="5dp"
+                    android:textIsSelectable="true"
+                    android:gravity="center"
+                    android:text="Taxi Details"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:id="@+id/lay_taxiModel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_titletaxi"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="165dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="2dp"
+                        android:textIsSelectable="true"
+                        android:text="Taxi Model Name:"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/taxi_model_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:textIsSelectable="true"
+                        android:padding="2dp"
+                        android:text=""
+                        android:textColor="@color/txt_geay_color"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lay_taxiregno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lay_drivername"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="165dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="2dp"
+                        android:textIsSelectable="true"
+                        android:text="Taxi Reg No:"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/taxi_reg_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:padding="2dp"
+                        android:text=""
+                        android:textIsSelectable="true"
+                        android:textColor="@color/txt_geay_color"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:id="@+id/hotel_ticket_lay"
+                android:orientation="vertical"
+                android:layout_below="@+id/ticket_lay"
+                android:background="@color/taxi_vaxi_color_white"
+                android:elevation="@dimen/statuslistelevation"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:padding="@dimen/vertical_margin"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/hotel_text"
+                    android:layout_width="120dp"
+                    android:textIsSelectable="true"
+                    android:layout_height="wrap_content"
+                    android:background="#F5B237"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Hotel Details"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:id="@+id/_hotel_lay_ticketno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_titleBasic"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="165dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="2dp"
+                        android:textIsSelectable="true"
+                        android:text="Room No:"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/room_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:padding="2dp"
+                        android:text=""
+                        android:textIsSelectable="true"
+                        android:textColor="@color/txt_geay_color"
+                        android:textSize="14sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/voucher_no_lay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_titleBasic"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="165dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="2dp"
+                        android:textIsSelectable="true"
+                        android:text="Voucher No:"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/voucher_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:padding="2dp"
+                        android:text=""
+                        android:textIsSelectable="true"
+                        android:textColor="@color/txt_geay_color"
+                        android:textSize="14sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/lay_room_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_titleBasic"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="165dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="2dp"
+                        android:textIsSelectable="true"
+                        android:text="Assigned Room Type:"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/room_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:padding="2dp"
+                        android:text=""
+                        android:textIsSelectable="true"
+                        android:textColor="@color/txt_geay_color"
+                        android:textSize="14sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/lay_Hotel_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_titleBasic"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="165dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="2dp"
+                        android:textIsSelectable="true"
+                        android:text="Hotel Name:"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/Hotel_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:padding="2dp"
+                        android:text=""
+                        android:textIsSelectable="true"
+                        android:textColor="@color/txt_geay_color"
+                        android:textSize="14sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/lay_Hotel_contact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_titleBasic"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="165dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="2dp"
+                        android:textIsSelectable="true"
+                        android:text="Hotel Contact:"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/hotel_contact"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:padding="2dp"
+                        android:textIsSelectable="true"
+                        android:text=""
+                        android:textColor="@color/txt_geay_color"
+                        android:textSize="14sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/ly_hotel_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_titleBasic"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="165dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="2dp"
+                        android:textIsSelectable="true"
+                        android:text="Hotel Address:"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/hotel_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:textIsSelectable="true"
+                        android:padding="2dp"
+                        android:text=""
+                        android:textColor="@color/txt_geay_color"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/hotel_ticket_lay"
+                android:layout_margin="10dp"
+                android:elevation="2dp"
+                android:id="@+id/download_ticket_lay"
+                android:background="@color/taxi_vaxi_color_white"
+                android:layout_marginBottom="10dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/download_ticket"
+                    android:text="Click to Download Voucher"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:textColor="@color/taxi_vaxi_color_black"
+                    android:padding="5dp"
+                    android:drawableRight="@drawable/downloadfile"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/feedback_lay"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical"
+                android:elevation="2dp"
+                android:background="@color/taxi_vaxi_color_white"
+                android:layout_below="@id/download_ticket_lay">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Feedbacks"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"
+                    android:padding="5dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="5dp"
+                    android:id="@+id/feedback1_lay">
+                    <TextView
+                        android:id="@+id/feedback1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:textStyle="italic"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center" />
+                    <TextView
+                        android:id="@+id/feedback1_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:textSize="10dp"
+                        android:textStyle="bold"
+                        android:layout_marginRight="10dp"
+                        android:gravity="right" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="5dp"
+                    android:id="@+id/feedback2_lay">
+                    <TextView
+                        android:id="@+id/feedback2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:textStyle="italic"
+                        android:gravity="center" />
+                    <TextView
+                        android:id="@+id/feedback2_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:textSize="10dp"
+                        android:textStyle="bold"
+                        android:gravity="right" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="5dp"
+                    android:id="@+id/feedback3_lay">
+                    <TextView
+                        android:id="@+id/feedback3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:textStyle="italic"
+                        android:gravity="center" />
+                    <TextView
+                        android:id="@+id/feedback3_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:gravity="right" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="5dp"
+                    android:id="@+id/feedback4_lay">
+                    <TextView
+                        android:id="@+id/feedback4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:textStyle="italic"
+                        android:gravity="center" />
+                    <TextView
+                        android:id="@+id/feedback4_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:gravity="right" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="5dp"
+                    android:id="@+id/feedback5_lay">
+                    <TextView
+                        android:id="@+id/feedback5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:textStyle="italic"
+                        android:gravity="center" />
+                    <TextView
+                        android:id="@+id/feedback5_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:gravity="right" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/feedback6_lay">
+                    <TextView
+                        android:id="@+id/feedback6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:textStyle="italic"
+                        android:gravity="center" />
+                    <TextView
+                        android:id="@+id/feedback6_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:gravity="right" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>
+
