@@ -1,0 +1,4 @@
+<resources>
+    <string name="msg_subscribed" />
+    <string name="msg_subscribe_failed" />
+</resources>
